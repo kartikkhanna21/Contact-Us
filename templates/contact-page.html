@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    </head> 
+    <body>
+    <div class="text-center">
+    <div>
+      <div class="form-group">
+      {% if messages %}
+       <ul class="messages">
+       {% for message in messages %}
+       <li>
+         <div class="alert alert-success">{{ message }}</div>
+       </li>
+       {%endfor%}
+      </ul>
+      {%endif%}
+    </div>
+    </div>
+
+    <form method="POST" class="container col-6 box">
+    <div class="form-heading">
+      <h1>CONTACT US</h1>
+    </div>
+    {% csrf_token%}
+
+     {%if form %}
+     {% for forms in form %}
+      <br>
+      {{forms}}
+      <br>
+     {%endfor%}
+     {%endif%}
+
+   
+    
+   
+     
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-success" value="send"/>
+    </div>
+
+     </form>
+     <style>
+     body{
+background-color: #f8ceec;
+background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
+}
+.box{
+box-shadow: 1px 1px 8px 1px black;
+border-radius: 3%;
+
+}
+form{
+    padding-bottom:2rem;
+    background-color:white;
+}
+.form-heading{
+    font-family: 'Lato', sans-serif;
+}
+     </style>
+    
+
+    </body>
+</html>
